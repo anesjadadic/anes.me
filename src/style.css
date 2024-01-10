@@ -108,3 +108,69 @@ body {
     margin-top: 1.5rem;
     margin-left: auto; margin-right: auto;
 }
+
+/* ----- Projects ----- */
+
+.projects {
+    text-align: center;
+}
+
+.projects h1 {
+    font-size: 48px;
+    padding: 1rem 1rem 1rem 2rem;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+.projects h2 {
+    font-size: 38px;
+    color: rgb(68, 68, 68);
+}
+
+.projects h3 {
+    margin: 1rem 2rem 1rem 2rem;
+    color: white;
+}
+
+.projects img {
+    width: 100%;
+}
+
+.projects a {
+    color: rgb(255, 255, 123);
+    font-size: 28px;
+    font-weight: bolder;
+    text-decoration: none;
+    border-bottom: 3px solid rgb(255, 255, 123);
+}
+
+.projects a:hover {
+    color: rgb(255, 255, 219);
+    border-bottom: 3px solid rgb(255, 255, 219);
+}
+
+.project {
+    background-color: black;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    width: 60%;
+    border: 5px solid black;
+}
+
+.slick-prev::before, .slick-next::before {
+    display:none;
+}
+
+.slick-arrow.slick-next, .slick-arrow.slick-prev {
+    background-color: black;
+    color: white;
+    padding: 1rem 0 1rem 0;
+}
+
+.slick-arrow.slick-next:hover, .slick-arrow.slick-prev:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 123);;
+}
