@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import './style.css';
 import React from 'react';
+import Pdf from "./assets/Resume.pdf";
 
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -94,7 +95,9 @@ export default function App() {
               <br/><br/>
               Outside of programming I enjoy music, basketball, cooking, and reading.
               <br/><br/>
-              Check out my skills and projects down below!
+              Please consider viewing my <a href={Pdf} target="_blank" style={{ color:'rgb(68, 68, 68)'}}>resume</a>.
+              <br/><br/>
+              And why not check out my skills and projects down below!
             </h3>
           </div>
         </div>
@@ -143,7 +146,8 @@ export default function App() {
               This project challenged me to utilize hooks and components in React, as well as some
               interesting CSS techniques, to create a functional, modern, and mobile-friendly website.
             </h3>
-            <a href="https://anesjadadic.github.io/blue-jay-cafe/">Live Demo</a>
+            <a href="https://anesjadadic.github.io/blue-jay-cafe/" target="_blank">Live Demo</a>&ensp;&ensp;
+            <a href="https://github.com/anesjadadic/blue-jay-cafe" target="_blank">GitHub Link</a>
           </div>
 
           <div className='project'>
@@ -172,9 +176,11 @@ export default function App() {
             </Slider>
             <h3>
               A fullstack project representing a physical music vendor. This project helped me 
-              learn about SQL security measures
+              learn more about SQL security measures as well as how to design apps which allow 
+              for the creation, reading, updating, and deletion of data.
             </h3>
-            <h2 style={{ fontSize: '32px' }}>Demo Out Soon</h2>
+            <h2 style={{ fontSize: '28px', display: 'inline'}}>Demo Out Soon</h2>&ensp;&ensp;
+            <a href="https://github.com/anesjadadic/spin-city" target="_blank">GitHub Link</a>
           </div>
         </div>
       </>
