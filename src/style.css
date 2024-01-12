@@ -18,13 +18,17 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position: sticky;
     top: 0;
     z-index: 1;
     background-color: rgb(0, 0, 0);
-    color: white;
     border-bottom: 8px solid rgb(255, 255, 123);
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 1.5rem;
 }
 
 .navbar ul {
@@ -40,8 +44,14 @@ body {
 
 /* ----- About Me ----- */
 
+.aboutMe {
+    margin-top: 3rem;
+    margin-left: auto; margin-right: auto;
+    display: flex;
+}
+
 .aboutMe h1 {
-    font-size: 56px;
+    font-size: 3rem;
     margin: 0rem 0 1rem 0;
     padding: 1rem 1rem 1rem 2rem;
     background-color: black;
@@ -49,35 +59,34 @@ body {
 }
 
 .aboutMe h2 {
-    font-size: 30px;
+    font-size: 2rem;
     color: rgb(68, 68, 68);
 }
 
 .aboutMe h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: rgb(117, 117, 117);
 }
 
-.aboutMe {
-    margin-top: 3rem;
-    margin-left: auto; margin-right: auto;
-    display: flex;
-}
-
 .aboutMeImg {
-    width: 40%;
-    display: flex;
-    justify-content: center;
+    width: 35%;
+    display: block;
+    padding-left: 2rem;
+    text-align: center;
 }
 
 .aboutMeText {
-    width: 50%;
+    width: 55%;
+    display: block;
+    padding: 0 1rem 0 2rem;
 }
 
 .headshot {
-    height: 450px;
+    max-width: 100%;
+    max-height: 100%;
     border: 5px solid black;
     box-shadow: -6px 8px black;
+    object-fit: cover;
 }
 
 /* ----- Skills ----- */
@@ -85,21 +94,15 @@ body {
 .skills {
     border-top: 8px solid rgb(255, 255, 123);
     margin-top: 4rem;
-    margin-left: auto; margin-right: auto;
-    width: 100%;
     background-color: black;
     color: white;
     text-align: center;
     padding-bottom: 1.5rem;
 }
 
-.skillsTable {
-    margin: auto;
-}
-
-.skillsTable img {
-    height: 70px;
-    margin: 0 1rem 0 1rem;
+.skills img {
+    height: 4rem;
+    margin: 0.5rem 1rem 0.5rem 1rem;
 }
 
 #arrows {
@@ -113,10 +116,12 @@ body {
 
 .projects {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .projects h1 {
-    font-size: 48px;
+    font-size: 3rem;
     padding: 1rem 1rem 1rem 2rem;
     margin: 0;
     background-color: black;
@@ -124,7 +129,7 @@ body {
 }
 
 .projects h2 {
-    font-size: 38px;
+    font-size: 2.5rem;
     color: rgb(68, 68, 68);
 }
 
@@ -137,20 +142,8 @@ body {
     width: 100%;
 }
 
-.projects a {
-    color: rgb(255, 255, 123);
-    font-size: 28px;
-    font-weight: bolder;
-    text-decoration: none;
-    border-bottom: 3px solid rgb(255, 255, 123);
-}
-
-.projects a:hover {
-    color: rgb(255, 255, 219);
-    border-bottom: 3px solid rgb(255, 255, 219);
-}
-
 .project {
+    box-sizing: border-box;
     background-color: black;
     display: block;
     margin: auto;
@@ -160,17 +153,206 @@ body {
     border: 5px solid black;
 }
 
+.project h2 {
+    display: inline;
+    font-size: 1.8rem;
+}
+
+.project a {
+    color: rgb(255, 255, 123);
+    font-size: 1.8rem;
+    font-weight: bolder;
+    text-decoration: none;
+    border-bottom: 3px solid rgb(255, 255, 123);
+}
+
+.project a:hover {
+    color: rgb(255, 255, 219);
+    border-bottom: 3px solid rgb(255, 255, 219);
+}
+
 .slick-prev::before, .slick-next::before {
-    display:none;
+    display: none;
 }
 
-.slick-arrow.slick-next, .slick-arrow.slick-prev {
-    background-color: black;
+#nextArrow, #prevArrow {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    height: 2.8rem;
+}
+
+#nextArrow {
+    margin: -2px;
+    padding: 0 2px 0 0;
+}
+
+#prevArrow {
+    margin: -2px;
+    padding: 0 0 0 2px;
+}
+
+#nextArrow h2, #prevArrow h2 {
     color: white;
-    padding: 1rem 0 1rem 0;
+    font-size: 28px;
+    margin: 0;
+    margin: auto;
 }
 
-.slick-arrow.slick-next:hover, .slick-arrow.slick-prev:hover {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 123);;
+#nextArrow:hover, #prevArrow:hover {
+    background-color: rgb(255, 255, 123);
+    h2 {
+        color: black;
+    }
+}
+
+/* ----- Contact ----- */
+
+.contact {
+    text-align: center;
+    background-color: black;
+    border-top: 8px solid rgb(255, 255, 123);
+    padding: 0 0 2rem 0;
+}
+
+.contact h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+.contact img {
+    height: 4rem;
+    padding: 0 1rem 0 1rem;
+}
+
+/* ----- RESPONSIVE STUFF ----- */
+
+@media screen and (max-width: 1024px) {
+    .aboutMe h1 {
+        font-size: 2rem;
+    }
+
+    .aboutMe h2 {
+        font-size: 1.5rem;
+    }
+
+    .aboutMe h3 {
+        font-size: 1.3rem;
+    }
+
+    .aboutMeText {
+        padding-left: 3rem;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    .skills img {
+        height: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar h1 {
+        font-size: 1rem;
+    }
+
+    .aboutMe {
+        display: block;
+        margin: 0;
+        padding: 2rem;
+    }
+
+    .aboutMeImg {
+        width: 100%;
+        padding: 0 0 2rem 0;
+    }
+
+    .headshot {
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+    .aboutMeText {
+        width: 100%;
+        padding: 0;
+    }
+
+    .skills {
+        margin: 0;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    #nextArrow, #prevArrow {
+        display: none;
+    }
+
+    .contact img {
+        height: 3rem;
+    }
+
+    .contact h1 {
+        color: white;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .navbar h1 {
+        font-size: 0.7rem;
+    }
+
+    .aboutMe {
+        padding: 1rem;
+    }
+
+    .aboutMe h1 {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .aboutMe h2 {
+        font-size: 1.3rem;
+    }
+
+    .aboutMe h3 {
+        font-size: 1rem;
+    }
+
+    .skills img {
+        height: 3rem;
+    }
+
+    .projects h1 {
+        font-size: 2.5rem;
+    }
+
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .projects h3 {
+        font-size: 1rem;
+    }
+
+    .project a {
+        font-size: 1rem;
+        border-bottom: 2px solid rgb(255, 255, 123);
+    }
+
+    .project h2 {
+        font-size: 1rem;
+    }
+
+    .contact img {
+        height: 2rem;
+    }
+
+    .contact h1 {
+        color: white;
+        font-size: 1.5rem;
+    }
 }

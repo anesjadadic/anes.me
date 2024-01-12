@@ -1,5 +1,3 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import './style.css';
 import React from 'react';
 import Pdf from "./assets/Resume.pdf";
@@ -7,9 +5,6 @@ import Pdf from "./assets/Resume.pdf";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { SlArrowLeft } from "react-icons/sl";
-import { SlArrowRight } from "react-icons/sl";
 
 import headshot from "./assets/headshot2.png";
 import reactIcon from './assets/react.png';
@@ -19,6 +14,9 @@ import sqlIcon from './assets/mysql.png';
 import jsIcon from './assets/js.jpeg';
 import pythonIcon from './assets/python.png';
 import javaIcon from './assets/java.png';
+import githubIcon from './assets/github.png';
+import linkedinIcon from './assets/linkedin.png';
+import emailIcon from './assets/email.png';
 import arrows from './assets/arrows.png';
 import bjc1 from './assets/bjc1.png'
 import bjc2 from './assets/bjc2.png'
@@ -45,22 +43,30 @@ const Greetings = () => {
   return <h1>{greet}</h1>
 }
 
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return(
-    <div onClick={onClick} className={`arrow ${className}`} >
-      <SlArrowLeft class="arrows" />
-    </div>
-  )
-  }
-
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return(
-    <div onClick={onClick} className={`arrow ${className}`} >
-      <SlArrowRight class="arrows" />
+  const { className, onClick, } = props;
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+      id='nextArrow'
+    >
+      <h2>&gt;</h2>
     </div>
-  )
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, onClick, id } = props;
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+      id='prevArrow'
+    >
+      <h2>&lt;</h2>
+    </div>
+  );
 }
 
 export default function App() {
@@ -68,8 +74,8 @@ export default function App() {
     dots: false,
     infinite: true,
     speed: 500,
-    nextArrow: <SlArrowRight to="next" />,
-    prevArrow: <SlArrowLeft to="prev" />,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   }
 
   return (
@@ -104,17 +110,13 @@ export default function App() {
 
         <div className="skills">
           <h1>SKILLS</h1>
-          <table className="skillsTable">
-            <tr>
-              <td><img src={reactIcon}/></td>
-              <td><img src={phpIcon}/></td>
-              <td><img src={tsIcon}/></td>
-              <td><img src={sqlIcon}/></td>
-              <td><img src={jsIcon}/></td>
-              <td><img src={javaIcon}/></td>
-              <td><img src={pythonIcon}/></td>
-            </tr>
-          </table>
+          <img src={reactIcon}/>
+          <img src={phpIcon}/>
+          <img src={tsIcon}/>
+          <img src={sqlIcon}/>
+          <img src={jsIcon}/>
+          <img src={javaIcon}/>
+          <img src={pythonIcon}/>
         </div>
   
         <img id='arrows' src={arrows}/>
@@ -179,9 +181,24 @@ export default function App() {
               learn more about SQL security measures as well as how to design apps which allow 
               for the creation, reading, updating, and deletion of data.
             </h3>
-            <h2 style={{ fontSize: '28px', display: 'inline'}}>Demo Out Soon</h2>&ensp;&ensp;
+            <h2>Demo Out Soon</h2>&ensp;&ensp;
             <a href="https://github.com/anesjadadic/spin-city" target="_blank">GitHub Link</a>
           </div>
+        </div>
+
+        <div className='contact'>
+          <h1>Contact Me</h1>
+          <h1 style={{ margin:'0' }}>
+            <a href="https://github.com/anesjadadic" target="_blank">
+              <img src={githubIcon}/>
+            </a>
+            <a href="https://www.linkedin.com/in/anes-jadadic/" target="_blank">
+              <img src={linkedinIcon}/>
+            </a>
+            <a href="mailto:anesjadadic1@gmail.com" target="_blank">
+              <img src={emailIcon}/>
+            </a>
+          </h1>
         </div>
       </>
   )
