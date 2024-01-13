@@ -14,6 +14,14 @@ body {
     margin: 0;
 }
 
+#aboutMe {
+    scroll-margin-top: 10rem;
+}
+
+#projects {
+    scroll-margin-top: 5rem;
+}
+
 /* ----- Navbar ----- */
 
 .navbar {
@@ -24,16 +32,23 @@ body {
     z-index: 1;
     background-color: rgb(0, 0, 0);
     border-bottom: 8px solid rgb(255, 255, 123);
+    padding: 0;
 }
 
-.navbar h1 {
+.navbar a {
     color: white;
     font-size: 1.5rem;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rgb(255, 255, 123);
 }
 
 .navbar ul {
     margin: 0;
-    padding: 0;
+    padding: 1rem 0 1rem 0;
     display: flex;
 }
 
@@ -42,10 +57,14 @@ body {
     margin: 0 2rem 0 2rem;
 }
 
+.mobile-navbar-button {
+    display: none;
+}
+
 /* ----- About Me ----- */
 
 .aboutMe {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     margin-left: auto; margin-right: auto;
     display: flex;
 }
@@ -66,6 +85,7 @@ body {
 .aboutMe h3 {
     font-size: 1.5rem;
     color: rgb(117, 117, 117);
+    font-weight: 500;
 }
 
 .aboutMeImg {
@@ -93,7 +113,7 @@ body {
 
 .skills {
     border-top: 8px solid rgb(255, 255, 123);
-    margin-top: 4rem;
+    margin-top: 3rem;
     background-color: black;
     color: white;
     text-align: center;
@@ -113,6 +133,9 @@ body {
 }
 
 /* ----- Projects ----- */
+.tip {
+    display: none;
+}
 
 .projects {
     text-align: center;
@@ -129,16 +152,22 @@ body {
 }
 
 .projects h2 {
-    font-size: 2.5rem;
-    color: rgb(68, 68, 68);
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 .projects h3 {
     margin: 1rem 2rem 1rem 2rem;
     color: white;
+    font-weight: 300;
 }
 
-.projects img {
+.projects h4 {
+    color: rgb(29, 29, 29);
+    font-size: 1.2rem;
+}
+
+.project img {
     width: 100%;
 }
 
@@ -153,11 +182,6 @@ body {
     border: 5px solid black;
 }
 
-.project h2 {
-    display: inline;
-    font-size: 1.8rem;
-}
-
 .project a {
     color: rgb(255, 255, 123);
     font-size: 1.8rem;
@@ -169,6 +193,13 @@ body {
 .project a:hover {
     color: rgb(255, 255, 219);
     border-bottom: 3px solid rgb(255, 255, 219);
+}
+
+.inactiveLink {
+    color: rgb(78, 78, 78);
+    display: inline;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 .slick-prev::before, .slick-next::before {
@@ -257,6 +288,51 @@ body {
         font-size: 1rem;
     }
 
+    .navbar {
+        padding: 1rem 2rem 1rem 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mobile-navbar-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-links-active {
+        width: 100%;
+        display: flex;
+        z-index: 2;
+    }
+
+    .navbar-links-active ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .navbar-links-active li {
+        list-style: none;
+    }
+    
+    .navbar-links-active li a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    
+    .navbar-links-active li a:hover {
+        color: rgb(255, 255, 123);
+    }
+
     .aboutMe {
         display: block;
         margin: 0;
@@ -282,8 +358,31 @@ body {
         margin: 0;
     }
 
+    .tip {
+        display: flex;
+        justify-content: center;
+        margin: 0 1rem 0.5rem 1rem;
+    }
+
+    #tipText {
+        margin-left: auto;
+        margin-right: 0.5rem;
+    }
+    
+    #tipGif {
+        height: 4rem;
+        width: 4rem;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
     .project {
         width: 100%;
+    }
+
+    .projects h2 {
+        margin: 2rem 0 0 0;
     }
 
     #nextArrow, #prevArrow {
@@ -302,7 +401,7 @@ body {
 
 @media screen and (max-width: 425px) {
     .navbar h1 {
-        font-size: 0.7rem;
+        font-size: 0.3rem;
     }
 
     .aboutMe {
@@ -326,6 +425,15 @@ body {
         height: 3rem;
     }
 
+    #tipText {
+        font-size: 1.2rem;
+    }
+
+    #tipGif {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
     .projects h1 {
         font-size: 2.5rem;
     }
@@ -343,12 +451,12 @@ body {
         border-bottom: 2px solid rgb(255, 255, 123);
     }
 
-    .project h2 {
+    .inactiveLink {
         font-size: 1rem;
     }
 
-    .contact img {
-        height: 2rem;
+    .project h2 {
+        font-size: 1rem;
     }
 
     .contact h1 {

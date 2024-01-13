@@ -1,10 +1,13 @@
 import './style.css';
 import React from 'react';
 import Pdf from "./assets/Resume.pdf";
+import { useState } from "react";
 
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 import headshot from "./assets/headshot2.png";
 import reactIcon from './assets/react.png';
@@ -27,6 +30,7 @@ import sc2 from './assets/sc2.png'
 import sc3 from './assets/sc3.png'
 import sc4 from './assets/sc4.png'
 import sc5 from './assets/sc5.png'
+import swipeGif from './assets/swipe.gif'
 
 const Greetings = () => {
   let myDate = new Date();
@@ -78,17 +82,28 @@ export default function App() {
     prevArrow: <SamplePrevArrow />,
   }
 
+  const [ openNavList, setOpenNavList ] = useState(false);
+
   return (
       <>
         <nav className="navbar">
-          <ul>
-            <li><h1>ABOUT</h1></li>
-            <li><h1>PROJECTS</h1></li>
-            <li><h1>CONTACT</h1></li>
-          </ul>
+          <a className="mobile-navbar-button" onClick={() => setOpenNavList(!openNavList)}>{openNavList ? <FaTimes/> : <FaBars/>}</a>
+          <div className={openNavList ? 'navbar-links-active' : 'navbar-links'}>
+            <ul>
+              <li>
+                <a href='#aboutMe'>ABOUT</a>
+              </li>
+              <li>
+                <a href='#projects'>PROJECTS</a>
+              </li>
+              <li>
+                <a href='#contact'>CONTACT</a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
-        <div className="aboutMe">
+        <div className="aboutMe" id="aboutMe">
           <div className='aboutMeImg'>
             <img className='headshot' src={headshot}/>
           </div>
@@ -101,7 +116,7 @@ export default function App() {
               <br/><br/>
               Outside of programming I enjoy music, basketball, cooking, and reading.
               <br/><br/>
-              Please consider viewing my <a href={Pdf} target="_blank" style={{ color:'rgb(68, 68, 68)'}}>resume</a>.
+              Please consider viewing my <a href={Pdf} target="_blank" style={{ color:'rgb(68, 68, 68)', fontWeight:'800'}}>resume</a>.
               <br/><br/>
               And why not check out my skills and projects down below!
             </h3>
@@ -119,10 +134,14 @@ export default function App() {
           <img src={pythonIcon}/>
         </div>
   
-        <img id='arrows' src={arrows}/>
+        <a href='#projects'><img id='arrows' src={arrows}/></a>
 
-        <div className='projects'>
+        <div className='projects' id='projects'>
           <h2>My Projects</h2>
+          <div className='tip'>
+            <h4 id='tipText'>Try swiping through the pictures!</h4>
+            <img src={swipeGif} id='tipGif'/>
+          </div>
           <div className='project'>
             <h1>
               Blue Jay Cafe <br/>
@@ -181,12 +200,12 @@ export default function App() {
               learn more about SQL security measures as well as how to design apps which allow 
               for the creation, reading, updating, and deletion of data.
             </h3>
-            <h2>Demo Out Soon</h2>&ensp;&ensp;
+            <p className="inactiveLink">Demo Out Soon</p>&ensp;&ensp;
             <a href="https://github.com/anesjadadic/spin-city" target="_blank">GitHub Link</a>
           </div>
         </div>
 
-        <div className='contact'>
+        <div className='contact' id='contact'>
           <h1>Contact Me</h1>
           <h1 style={{ margin:'0' }}>
             <a href="https://github.com/anesjadadic" target="_blank">
