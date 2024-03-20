@@ -77,7 +77,7 @@ export default function App() {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 501,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   }
