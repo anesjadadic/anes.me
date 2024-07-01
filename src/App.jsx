@@ -16,6 +16,8 @@ import tsIcon from './assets/typescript.png';
 import sqlIcon from './assets/mysql.png';
 import jsIcon from './assets/js.jpeg';
 import pythonIcon from './assets/python.png';
+import awsIcon from './assets/aws.jpeg';
+import tailwindIcon from './assets/tailwind.png';
 import javaIcon from './assets/java.png';
 import githubIcon from './assets/github.png';
 import linkedinIcon from './assets/linkedin.png';
@@ -30,6 +32,9 @@ import sc2 from './assets/sc2.png'
 import sc3 from './assets/sc3.png'
 import sc4 from './assets/sc4.png'
 import sc5 from './assets/sc5.png'
+import wtp1 from './assets/wtp1.png'
+import wtp2 from './assets/wtp2.png'
+import wtp3 from './assets/wtp3.png'
 import swipeGif from './assets/swipe.gif'
 
 const Greetings = () => {
@@ -132,6 +137,8 @@ export default function App() {
           <img src={jsIcon}/>
           <img src={javaIcon}/>
           <img src={pythonIcon}/>
+          <img src={awsIcon}/>
+          <img src={tailwindIcon}/>
         </div>
   
         <a href='#projects'><img id='arrows' src={arrows}/></a>
@@ -169,6 +176,33 @@ export default function App() {
             </h3>
             <a href="https://anesjadadic.github.io/blue-jay-cafe/" target="_blank">Live Demo</a>&ensp;&ensp;
             <a href="https://github.com/anesjadadic/blue-jay-cafe" target="_blank">GitHub Link</a>
+          </div>
+
+          <div className='project'>
+            <h1>
+              whatToPlay <br/>
+              <img src={reactIcon} style={{width:'40px', margin:'1rem 0.5rem 0 0.5rem'}}/>
+              <img src={jsIcon} style={{width:'40px', margin:'1rem 0.5rem 0 0.5rem'}}/>
+              <img src={awsIcon} style={{width:'40px', margin:'1rem 0.5rem 0 0.5rem'}}/>
+              <img src={tailwindIcon} style={{width:'40px', margin:'1rem 0.5rem 0 0.5rem'}}/>
+            </h1>
+            <Slider {...settings}>
+              <div>
+                <img src={wtp1}/>
+              </div>
+              <div>
+                <img src={wtp2}/>
+              </div>
+              <div>
+                <img src={wtp3}/>
+              </div>
+            </Slider>
+            <br></br>
+            <h3>
+              A project designed to help users find video games that pertain to their tastes through extensive filtering. 
+              This project taught me more on how to use an API to efficiently display data that pertains to certain requirements.
+              I also learned more on hooks and components with React and front-end design utilizing Tailwind CSS.
+            </h3>
           </div>
 
           <div className='project'>
